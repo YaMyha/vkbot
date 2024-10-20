@@ -1,8 +1,10 @@
 import vk_api
+from dotenv import load_dotenv
 from vk_api.longpoll import VkLongPoll, VkEventType
+import os
 
-# Ваш токен доступа (вставьте сюда свой токен сообщества)
-TOKEN = 'vk1.a.oI-bTJpKP_GH8hnDoHHxAFRrmKkyAudZlEni-zDbZnI4-NoCi_XTao2c4Dp9pn1sIPwTEzz6EjplWTiJPvAWSxxP0jU-qwoR7jcKcEFDtlwE0j06l1I5A3RsCqmXBY9dAHpPSZMMhQuHREiAlEdXgGMwm8AxlrBX8yHa5XKbvJHRJwuuaxePJEJmZOdWQ-X-ICvGB89Sd5PcSzRpMUCatQ'
+load_dotenv()
+TOKEN = os.getenv('API_KEY')
 
 # Авторизация через токен
 vk_session = vk_api.VkApi(token=TOKEN)
